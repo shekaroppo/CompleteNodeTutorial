@@ -1,26 +1,28 @@
-#### What is Node.js
+## Introduction
+
+##### What is Node.js
     - Node engine is same as Chrome engine
     - You can go to Chrome developer console and print same commands
-    - Node have extra lib which brower doesn't have
+    - Node have extra lib which browser doesn't have
         ex: process.version work on Node but not in Chrome
-#### Creating variables
+##### Creating variables
     - var hello = 'Hello World'
-#### Strings
+##### Strings
     - Use single quotes
     - Valid Variable name
         - Lower or upper case letter
         - $ and _
         - Use camel case 'lastName' to make reading essay
-#### Number
+##### Number
     - var age = 28;
-#### If statements
+##### If statements
     - if(10 === 11 && 'shekar' === ' tom'){
       }
-#### Functions
+##### Functions
     - function funcName(){
 
     }
-#### Objects
+##### Objects
     - var person = {};
        person.firstName="Shekar";
        person.lastName="Shekar";
@@ -42,13 +44,30 @@
 ##### Bank account Part2
     -
 ##### For While loop
-
 ##### Variable Scope
     - variable declared inside function can't be accesed outside of function
     - functions can access and modify global variable
-    - local varibale is completely diffrent from golbal variable even if name of var is same
+    - local varibale is completely different from global variable even if name of var is same
 #### Closures
-    closure is function created inside another function
+    - closure is function created inside another function
+##### Bank account Part3
+
+## Getting input and storing data
+
+##### Creating npm based app
+    - npm init to create package.json
+    - npm install node-persist@0.0.6 --save to add node-persist module to our app
+        - This will create dependecies attribute in pacakge.json
+        - Also create node_module folder also get created
+    - Configure script like start in package.json to make life easier
+
+#####
+    - Include third party library's with require
+        - var storage = require('node-persist');
+    -
+
+
+
 
 
 
