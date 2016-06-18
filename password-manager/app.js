@@ -198,24 +198,39 @@ var argv = require('yargs')
 var command = argv._[0];
 
 if (command === 'create' && typeof argv.name !== 'undefined' && typeof argv.username !== 'undefined' && typeof argv.password !== 'undefined' && typeof argv.masterpassword !== 'undefined') {
-    var createdAccount = createAccount({
-        name: argv.name,
-        username: argv.username,
-        password: argv.password
-    }, argv.masterpassword);
-    console.log("Account created");
-    console.log(createdAccount);
+    try {
+        var createdAccount = createAccount({
+            name: argv.name,
+            username: argv.username,
+            password: argv.password
+        }, argv.masterpassword);
+        if (typeof createdAccount === 'undefined') {
+            throw new Error('Unable to create Account');
+        } else {
+            console.log("Account created");
+            console.log(createdAccount);
+        }
+    }
+    catch (e) {
+        console.log(e.message);
+    }
 
 }
 else if (command === 'get' && typeof argv.name !== 'undefined' && typeof argv.masterpassword !== 'undefined') {
-    var account = getAccount(argv.name, argv.masterpassword);
-    if (typeof account === 'undefined') {
-        console.log("Account not found");
+    try {
+        var account = getAccount(argv.name, argv.masterpassword);
+        if (typeof account === 'undefined') {
+            throw new Error('Account not found');
+        }
+        else {
+            console.log("Account found");
+            console.log(account);
+        }
     }
-    else {
-        console.log("Account found");
-        console.log(account);
+    catch (e) {
+        console.log(e.message);
     }
+
 }
 
 function createAccount(account, masterPassword) {
