@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<% include templates/header %>
+<h1><%= title %></h1>
+<p><%= name %></p>
+<p><%= videodata.categoryName %></p>
+<ul>
+    <% for (var i = 0;i < 5;i++){ %>
+    <li>Tuna</li>
+    <% } %>
+    <% videodata.categories.forEach(function (item) { %>
+    <li><a href="<%= item.categoryID %>"><%= item.categoryName %></a></li>
+    <% }); %>
+
+</ul>
+</body>
+</html>
